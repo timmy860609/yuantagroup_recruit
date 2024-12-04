@@ -1,0 +1,458 @@
+
+body{
+	font-family: "Noto Sans TC", sans-serif;
+	background: #eeeeee;
+	line-height: 1.5;
+}
+
+/* Color */
+
+.black{
+    color: black;
+}
+.white{
+    color: white;
+}
+.orange{
+    color: #EB6100;
+}
+.blue{
+    color: #0053AC;
+}
+
+/* Spacing */
+
+.container{
+	width: 100%;
+	padding: 0px 80px;
+	margin: 0 auto;
+}
+@media (max-width: 1439px) {
+	.container {
+		width: 100%;
+		padding: 0 40px;
+	}
+  }
+  
+@media (max-width: 767px) {
+	.container {
+	  width: 100%;
+	  padding: 0 24px;
+	}
+  }
+
+
+/* header */
+  .navbar{
+	width: 100%;
+	position: fixed;
+	top: 0;
+	align-items: center;
+	background:white ;
+	z-index: 99;
+}
+
+
+.navbar .container{
+	display: flex;
+	height: 80px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo a {
+	color: #fff;
+	font-size: 20px;
+	font-weight: bolder;
+	text-indent: 101%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    background-image: url(../IMG/YuantaLogo.svg);
+    width: 165px;
+	background-repeat: no-repeat;
+}
+
+
+/* ContainerBlock */
+
+.wrapper{
+	max-width: 1440px;
+	padding: 120px;
+	margin: 0 auto;
+}
+.title{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	gap: 32px;
+}
+
+@media (max-width: 1439px) {
+	.wrapper {
+		max-width: 1200px;
+		padding: 96px 32px;
+	}
+  }
+@media (max-width: 767px) {
+	.wrapper {
+		width: 100%;
+		padding: 56px 24px;
+	}
+    .title{
+        gap: 16px;
+    }
+    .navbar .container{
+        height: 58px;
+    }
+  }
+
+/* Menu */
+
+.showmenu {
+    color: #0053AC;
+    font-size: 40px;
+    text-decoration: none;
+    cursor: pointer;
+	margin-top: -16px;
+    display: none;
+}
+@media (max-width: 1023px) {
+	.showmenu{
+        display: block;
+    }
+  }
+/* 黑色遮罩 */
+.overlay {
+    display: none; /* 初始隱藏 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* 黑色遮罩 */
+    z-index: 500; /* 在側邊欄之下 */
+    transition: opacity 0.3s ease; /* 遮罩淡入淡出 */
+}
+
+.overlay.active {
+    display: block;
+    opacity: 1;
+}
+.side-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+
+/* 側邊選單 */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 320px; /* 占螢幕寬度的 1/3 */
+    height: 100vh;
+    background-color: white;
+    z-index: 600; /* 在遮罩之上 */
+    transform: translateX(100%); /* 初始位置在右側外部 */
+    transition: transform 0.3s ease;
+}
+
+/* 開啟時的效果 */
+.sidebar.active {
+    transform: translateX(0); /* 滑入視窗 */
+}
+
+/* 關閉按鈕 */
+.close-btn {
+    font-size: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+	color: #0053AC;
+    margin-left: 80%;
+}
+
+/* 側邊選單項目 */
+.sidebar ul {
+    list-style-type: none;
+    padding: 32px 40px;
+}
+
+.sidebar a {
+    color: #737373;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 400;
+	position: relative; /* 為了使用伪元素 */
+    display: inline-block; 
+    padding: 16px 32px;
+}
+.sidebar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px; /* 底線的高度 */
+    background-color: #0053AC; /* 底線顏色 */
+    transform: scaleX(0); /* 初始狀態，底線不顯示 */
+    transition: transform 0.3s ease; /* 動畫效果 */
+}
+
+.sidebar a:hover{
+    color: #0053AC;
+    font-weight: 600;
+}
+
+.sidebar a:hover::after {
+    transform: scaleX(1); /* 懸停時顯示底線 */
+}
+.sidebar a.active{
+    color: #0053AC;
+    font-weight: 600;
+}
+
+.sidebar img{
+    width: 80px;
+    margin-top: 8px;
+}
+
+
+
+@media (max-width: 1023px) {
+    .sidebar{
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+	
+    .sidebar ul {
+        padding: 24px 24px 80px 24px;
+    }
+  }
+/* 浮動按鈕 */
+.float-btn{
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	position: fixed;
+	bottom: 20px;
+	right: 32px;
+    z-index: 100;
+}
+
+.float-btn img{
+	width: 32px;
+	color: white;
+}
+
+.edit, .submit{
+	background-color: #0053AC;
+	width: 96px;
+	height: 96px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 8px;
+	color: white;
+	font-size: 18px;
+}
+.submit{
+	background-color: #EB6100;
+}
+
+@media (max-width: 767px) {
+    .float-btn{
+        flex-direction: row;
+        gap: 0;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+    }
+    .float-btn img{
+        width: 28px;
+    }
+    .edit,.submit{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        padding: 16px 24px;
+    }
+}
+/* --------------------GoToTop------------------- */
+.back-to-top {
+    position: fixed; /* 固定位置 */
+    bottom: 250px;    /* 距離底部 20px */
+    right: 54px;     /* 距離右側 20px */
+    background-color: #232323c6; /* 背景顏色 */
+    color: white;    /* 文字顏色 */
+    border: none;    /* 取消邊框 */
+    border-radius: 100%; /* 圓形按鈕 */
+    width: 48px;     /* 寬度 */
+    height: 48px;    /* 高度 */
+    display: flex;   /* 讓按鈕內的內容居中 */
+    align-items: center; /* 垂直置中 */
+    justify-content: center; /* 水平置中 */
+    transition: background-color 0.3s; /* 背景顏色過渡效果 */
+    opacity: 0; /* 初始隱藏 */
+    visibility: hidden; /* 初始隱藏 */
+    z-index: 100; /* 確保在最上層 */
+}
+
+.back-to-top.show {
+    opacity: 1; /* 滾動到一定距離後顯示 */
+    visibility: visible; /* 滾動到一定距離後顯示 */
+}
+
+.back-to-top:hover {
+    background-color: black; /* 滑鼠懸停時改變背景顏色 */
+}
+
+@media (max-width: 767px) {
+    .back-to-top {
+        bottom: 80px; 
+        right: 16px; 
+    }
+}
+/* --------------input-------------------- */
+.operation{
+	display: flex;
+	justify-content: space-between;
+}
+
+label {
+    display: block;
+    margin-bottom: 4px;
+	font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+	background-color:#F0F0F0 ;
+	border: none;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+
+/* ---------------ToggleToken----------------- */
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+}
+
+.radio-input {
+    display: none; 
+}
+
+.radio-option{
+display: flex;
+flex-direction: row;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+.radio-label {
+    cursor: pointer;
+    padding: 8px 16px;
+    background-color: #F6F7FA;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    color: #737373;
+}
+
+.radio-input:checked + .radio-label {
+    background-color: #0053AC;
+    color: white;
+    border-color: #0053AC;
+}
+
+/* Footer */
+
+.footer{
+	background-color: black;
+}
+.about{
+	max-width: 1200px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	margin: 0 auto;
+	padding: 60px 40px 40px 40px;
+}
+.web{
+	text-align: center;
+	padding: 32px;
+	border-top: 1px solid white;
+}
+
+.alert{
+    padding: 12px 16px;
+    background-color: #F0F1F3;
+    border-radius: 8px;
+}
+
+button{
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #0053AC;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* button */
+.secondary-btn{
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid #0053AC;
+    color: #0053AC;
+}
+
+/* title */
+.step-title{
+	max-width: 768px;
+	margin: 0  auto;
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.title-line{
+	width: 100%;
+	border: 1px solid #E9E9E9;
+}
+.rectangle{
+	width: 6px;
+	height: 32px;
+	background-color: #0053AC;
+}
+
+.decorate{
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 16px;
+}
+
+.block-title{
+	width: 100%;
+	margin: 0  auto;
+	margin-bottom: 24px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}

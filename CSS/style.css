@@ -1,0 +1,355 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+a{
+	text-decoration: none;
+}
+
+img{
+	max-width: 100%;
+	height: auto;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+
+/*css resset end*/
+
+
+/* -----------------登入頁-------------------- */
+.login{
+	width: 100%;
+	padding: 0 120px;
+	display: flex;
+	margin-top: 80px;
+}
+
+.kv{
+	width: 50%;
+	height: 640px;
+	background-color: black;
+}
+
+.login-card{
+	width: 50%;
+	background-color: white;
+	padding: 40px;
+}
+
+.login-card h2{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+/* login-form */
+.login-form{
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 24px 0;
+}
+
+@media (max-width: 767px) {
+	.login{
+		padding: 0px;
+	}
+	.kv{
+		display: none;
+	}
+	.login-card{
+		width: 100%;
+		padding: 40px 16px;
+	}
+	.login-card h2{
+		margin-bottom: 24px;
+	}
+  }
+
+
+/* -------------註冊頁-------------------- */
+.signup{
+	width: 100%;
+	max-width: 768px;
+	padding: 40px 64px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin: 0 auto;
+}
+
+.signup-btn{
+	margin-top: 24px;
+}
+
+
+
+@media (max-width: 767px) {
+	.signup{
+		padding: 40px 16px;
+	}
+	.step-title{
+		margin-top: 24px;
+	}
+  }
+
+  /* -------------註冊結果頁-------------------- */
+
+  .result{
+	max-width: 768px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 40px;
+	background-color: white;
+  }
+
+  .result img{
+	width: 207px;
+  }
+
+  .result h3{
+	color:#339555 ;
+	margin-top: 24px;
+	margin-bottom: 16px;
+  }
+
+  .result-btn{
+	margin-top: 64px;
+	width: 312px;
+  }
+
+  @media (max-width: 767px) {
+	.result{
+		padding: 40px 16px;
+	}
+	.result-btn{
+		margin-top: 48px;
+		width: 100%;
+	}
+  }
+
+  /* -------------首頁-------------------- */
+
+  .side{
+	display: flex;
+	flex-direction: column;
+	width: 296px;
+	height: 498px;
+	background-color: white;
+	padding: 32px;
+	position: sticky;
+	top: 120px;
+	border-radius: 16px;
+	border: 1px solid #E9E9E9;
+  }
+  .side img{
+	width: 80px;
+	margin:  0 auto;
+	text-align: center;
+  }
+  .side p{
+	text-align: center;
+  }
+  .side ul{
+	margin-top: 24px;
+	margin-bottom: 24px;
+  }
+  .side li{
+	width: 100%;
+	padding: 16px 32px;
+	text-align: center;
+  }
+
+  .container-block{
+    display: flex;
+    gap: 40px;
+	width: 100%;
+}
+
+.content{
+	width: 100%;
+}
+
+@media (max-width: 1439px) {
+	.container-block{
+		margin-top:24px ;
+	}
+  }
+
+@media (max-width: 1023px) {
+	.side{
+		display: none;
+		width: 0%;
+	}
+  }
+
+/* 職缺卡片 */
+.hiring-card{
+	width: 100%;
+	align-items: center;
+	padding: 16px 24px;
+	background-color: white;
+	cursor: pointer;
+	color: #323232;
+	border-radius: 16px;
+	display: block;
+	border: 1px solid #E9E9E9;
+}
+
+.hiring-card:hover {
+	border: 1px solid #267CC9;
+}
+
+.hiring-card span{
+	color: #323232;
+	font-weight: 400;
+}
+
+.job-card{
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.job{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+	margin: 8px 0px;
+}
+
+.job img{
+	width: 24px;
+	height: 24px;
+}
+
+.chip{
+	border-radius: 80px;
+	width: auto;
+	padding: 2px 6px;
+	font-weight: 400;
+}
+
+.full-time{
+	background-color:#E9F3FF ;
+	color: #076ED7;
+}
+
+.part-time{
+	background-color: #FDEFE6;
+	color: #EB6100;
+}
+
+.type{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 8px;
+}
+
+
+/* Tab */
+.tabs-container {
+    width: 100%;
+    overflow-x: auto; /* 允許橫向滾動 */
+    margin-bottom: 20px;
+    display: flex;
+	position: sticky;
+	top: 80px;
+	background-color: rgba(238, 238, 238, 0.95);
+}
+
+.tabs {
+    display: flex; 
+}
+
+.tab {
+    padding: 8px 16px;
+    cursor: pointer;
+    border-bottom: none;
+    transition: background-color 0.3s;
+    white-space: nowrap; 
+	font-size: 20px;
+	color: #737373;
+}
+
+.tab:hover {
+	border-bottom: 2px solid #076ED7;
+	color: #005BAC;
+	font-weight: 500;
+}
+
+.tab.active {
+	color: #005BAC;
+	font-weight: 500;
+    border-bottom: 2px solid #076ED7;
+}
+
+/* Tab 內容區域 */
+.tab-content {
+    display: none;
+    width: 100%;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@media (max-width: 767px) {
+	.tabs-container {
+		top: 56px;
+	}
+  }
+
+
